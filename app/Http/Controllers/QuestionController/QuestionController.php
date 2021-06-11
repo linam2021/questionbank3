@@ -78,8 +78,8 @@ class QuestionController extends Controller
             }
             else
             {
-                // if (is_null($request->question_image))
-                // {
+                if (is_null($request->question_image))
+                {
                     $addPQues=Question::create([
                         'question_text'=>$request->question_text,
                         'answer_a'=>$request->answer_a,
@@ -91,25 +91,25 @@ class QuestionController extends Controller
                         'question_level'=>$request->question_level,
                         'course_id'=>$request->course_id
                     ]);
-                // }
-                // else
-                // {
-                //     $newImageName=time() . '-' . $request->question_image->getClientOriginalName();
-                //     $request->question_image->move(public_path("/question_images"),$newImageName);
-                //     $imageURL=url('/question_images'.'/'.$newImageName);
-                //     $addPQues=Question::create([
-                //         'question_text'=>$request->question_text,
-                //         'question_image'=> $imageURL,
-                //         'answer_a'=>$request->answer_a,
-                //         'answer_b'=>$request->answer_b,
-                //         'answer_c'=>$request->answer_c,
-                //         'correct_answer'=>$request->correct_answer,
-                //         'user_id'=>$user_id,
-                //         'video_number'=>$request->video_number,
-                //         'question_level'=>$request->question_level,
-                //         'course_id'=>$request->course_id
-                //     ]);
-                // }
+                }
+                else
+                {
+                    $newImageName=time() . '-' . $request->question_image->getClientOriginalName();
+                    $request->question_image->move(public_path("/question_images"),$newImageName);
+                    $imageURL=url('/question_images'.'/'.$newImageName);
+                    $addPQues=Question::create([
+                        'question_text'=>$request->question_text,
+                        'question_image'=> $imageURL,
+                        'answer_a'=>$request->answer_a,
+                        'answer_b'=>$request->answer_b,
+                        'answer_c'=>$request->answer_c,
+                        'correct_answer'=>$request->correct_answer,
+                        'user_id'=>$user_id,
+                        'video_number'=>$request->video_number,
+                        'question_level'=>$request->question_level,
+                        'course_id'=>$request->course_id
+                    ]);
+                }
                 // if (is_null($request->sub_question_image))
                 // {
                     $addSubQues=Question::create([
