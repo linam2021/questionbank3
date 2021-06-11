@@ -277,7 +277,7 @@
                                 <th scope="col">الرقم</th>
                                 <th scope="col">اسم المستخدم</th>
                                 <th scope="col">نص السؤال </th>
-                                {{-- <th scope="col">رابط الصورة</th> --}}
+                                <th scope="col">رابط الصورة</th>
                                 <th scope="col">الإجابة A</th>
                                 <th scope="col">الإجابة B</th>
                                 <th scope="col">الإجابة C</th>
@@ -298,11 +298,11 @@
                                         <th scope="row">{{$i}}-A </th>
                                         <td scope="row">{{$question->user->name}}</td>
                                         <td scope="row">{{$question->question_text}}</td>
-                                        {{-- @if ($question->question_image !=null)
+                                        @if ($question->question_image !=null)
                                             <th class="text-center" scope="row"><a href="{{URL::asset($question->question_image)}}" class="link-primary">Link</a></th>
                                         @else
                                             <th scope="row"></th>
-                                        @endif --}}
+                                        @endif
                                         <td scope="row">{{$question->answer_a}}</td>
                                         <td scope="row">{{$question->answer_b}}</td>
                                         <td scope="row">{{$question->answer_c}}</td>
