@@ -97,8 +97,8 @@ class QuestionController extends Controller
                     $newImageName=time() . '-' . $request->question_image->getClientOriginalName();
                     // $request->question_image->move(public_path("/question_images"),$newImageName);
                     // $imageURL=url('/question_images'.'/'.$newImageName);
-                    $request->photo->move('question_imagess', $newImageName);
-                    $imageURL = url('/question_images'.'/'.$newImageName);
+                    $request->question_image->move('img', $newImageName);
+                    $imageURL = url('/img'.'/'.$newImageName);
                     $addPQues=Question::create([
                         'question_text'=>$request->question_text,
                         'question_image'=> $imageURL,
