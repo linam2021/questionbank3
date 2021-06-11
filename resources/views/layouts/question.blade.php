@@ -299,7 +299,7 @@
                                         <td scope="row">{{$question->user->name}}</td>
                                         <td scope="row">{{$question->question_text}}</td>
                                         @if ($question->question_image !=null)
-                                            <th class="text-center" scope="row"><a href="{{URL::asset($question->question_image)}}" class="link-primary">Link</a></th>
+                                            <th class="text-center" scope="row"><a href="{{$question->question_image}}" class="link-primary">Link</a></th>
                                         @else
                                             <th scope="row"></th>
                                         @endif
